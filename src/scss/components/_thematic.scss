@@ -1,0 +1,49 @@
+.thematic {
+  margin: 0 auto 40px;
+  &__title {
+    font-size: 2.5rem;
+    margin: 3.1rem 0;
+  }
+  &__content-title {
+    background: $white;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 22px;
+    padding-top: 80px;
+    margin-top: -40px;
+  }
+  &__content {
+    @include flexbox();
+    @include max-ml {
+      width: calc(100vw - 140px);
+      margin: 0 auto;
+    }
+  }
+  &__item {
+    background: #ffcb16;
+    @include flexbox();
+    flex: 1 0 auto;
+    flex-direction: column;
+    @include align-items(center);
+    @include justify-content(end);
+    height: calc(100% - 50px);
+    padding-top: 50px;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
+
+    @include max-ml {
+      height: 300px;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+      width: 80% !important;
+      @include max-ml {
+        width: 50% !important;
+      }
+    }
+  }
+  .owl-carousel .owl-stage{display: flex;}
+}

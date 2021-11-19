@@ -1,0 +1,47 @@
+@keyframes marquee {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+.slider-banner {
+    padding-bottom: 23px;
+}
+
+.slider-news {
+    line-height: 50px;
+    margin-bottom: 60px;
+    width: 100%;
+    height: 50px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    background: #fffdf5;
+    box-sizing: border-box;
+
+    .marquee {
+        width: 250%;
+        position: absolute;
+        top: 9px;
+        background: #fffdf5;
+        animation: marquee 20s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+    a {
+        color: #ed2343;
+        font-size: 21px;
+        padding: 0 15px;
+        border-right: 2px solid #ed2343;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}

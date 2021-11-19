@@ -1,0 +1,354 @@
+.footer {
+    background: url("../../assets/images/bg-footer.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 36px;
+
+    @include max-ml {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .style-text {
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    .newsletter {
+        position: relative;
+
+        &__title {
+            background: #383838;
+            font-size: 24px;
+            line-height: 29px;
+            padding: 17px 55px;
+            display: inline-block;
+            color: $white;
+            text-transform: uppercase;
+            border-radius: 8px;
+        }
+
+        &__subtitle {
+            font-size: 19px;
+            line-height: 23px;
+            margin-top: 29px;
+            width: 60%;
+            padding-bottom: 30px;
+            position: relative;
+            margin-bottom: 32.67px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-bottom: 1px solid $color_secondary;
+                width: 83px;
+                height: 1px;
+            }
+
+            @include max-ml {
+                width: 100%;
+            }
+        }
+
+        &__right {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            @include max-ml {
+                display: none;
+            }
+        }
+
+        #newsletterForm {
+            width: 60%;
+            margin-bottom: 62px;
+
+
+            @include max-ml {
+                width: 100%;
+            }
+
+            input,
+            textarea {
+                font-family: $font_main;
+                padding: 10px 0 10px 27px;
+                font-size: 18px;
+                border: none;
+                width: calc(100% - 27px);
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+                margin-bottom: 12px;
+                @include placeholderInput();
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            textarea {
+                min-height: 119px;
+                font-family: $font_main;
+                margin-bottom: 25px;
+            }
+
+            .newsletter__bottom {
+                @include flexbox();
+                @include align-items(center);
+                @include justify-content(space-between);
+
+                @include max-sm {
+                    @include flex-wrap(wrap)
+                }
+            }
+
+            .newsletter__checkbox {
+                @include flexbox();
+                @include align-items(center);
+                position: relative;
+                padding-left: 45px;
+                cursor: pointer;
+                font-size: 20px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                    &:checked ~ .checkmark {
+                        background-color: $color_primary;
+                    }
+                    &:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                }
+
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 31px;
+                    width: 31px;
+                    border: 2px solid #000000;
+                    box-sizing: border-box;
+                    border-radius: 9px;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+
+                        left: 9px;
+                        top: 5px;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                    }
+                }
+
+                &:hover {
+                    input ~ .checkmark {
+                        background-color: $white;
+                    }
+
+                    input:checked ~ .checkmark {
+                        background-color: $color_primary;
+                    }
+                }
+            }
+        }
+
+        &__btn-submit {
+            font-size: 20px;
+            color: $white;
+            background: #383838;
+            border-radius: 11px;
+            border: none;
+            padding: 8px 32px;
+
+            @include max-sm {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .partner {
+        &__title {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+            font-size: 2.8rem;
+
+            @include max-md {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+
+            @include max-ml {
+                text-align: center;
+                font-size: 2.1rem;
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                height: 1px;
+                width: calc(32% - 22px);
+                border-top: 1px solid $color_secondary;
+            }
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            background: $white;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .link-social {
+        text-align: center;
+        margin-bottom: 48.75px;
+
+        &__list {
+            margin-top: 20px;
+            @include flex_center();
+        }
+
+        &__item {
+            width: 40px;
+            height: 40px;
+            margin-right: 40px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .contact {
+        border-top: 1px solid $color_secondary;
+        border-bottom: 1px solid;
+        padding-top: 15px;
+        font-family: $font_text;
+
+        &__title,
+        &__item-title {
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        &__list {
+            @include flexbox();
+            @include justify-content(space-between);
+            @include flex-wrap(wrap);
+            margin: 15px 0 12px 0;
+        }
+
+        &__item {
+            position: relative;
+            margin-bottom: 18px;
+            padding-top: 12px;
+            width: 50%;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-top: 1px solid $color_secondary;
+                width: 68px;
+                height: 1px;
+            }
+
+            @include max-md {
+                width: 100%;
+            }
+        }
+
+        &__item-content {
+            padding-top: 5px;
+            line-height: 25px;
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .social {
+        &__title {
+            @include flexbox();
+            @include justify-content(space-between);
+            margin-top: 22px;
+            padding-bottom: 31px;
+            border-bottom: 1px solid $color_secondary;
+
+            @include max-md {
+                @include flex-wrap(wrap);
+            }
+
+            span {
+                display: block;
+                font-weight: normal;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                position: relative;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom: 1px solid $color_secondary;
+                    width: 68px;
+                    height: 1px;
+                }
+            }
+
+            .social__fanpage {
+                &:last-child {
+                    span {
+                        &::after {
+                            right: 0;
+                            left: inherit;
+
+                            @include max-md {
+                                right: inherit;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+
+                @include max-md {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    .copyright {
+        margin: 18px auto 0 auto;
+        padding-bottom: 30px;
+        text-align: center;
+        font-family: $font_text;
+    }
+}

@@ -1,0 +1,49 @@
+.student {
+  margin-top: 30px;
+  margin-bottom: 36px;
+
+  &__list {
+    margin-top: 33px;
+  }
+
+  &__item {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 16px 33px 32px;
+    @include flexbox();
+    flex-direction: column;
+    @include align-items(left);
+    @include justify-content(top);
+
+    a {
+      font-size: 24px;
+      color: $black;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 17px;
+        width: 5px;
+        background: #ffca14;
+        margin-left: -20px;
+        margin-right: 5px;
+      }
+    }
+
+    .sub-title {
+      display: block;
+      width: 80%;
+    }
+
+    .des {
+      border-top: 1px solid $black;
+      padding-top: 14px;
+      margin-top: 13px;
+    }
+  }
+}
