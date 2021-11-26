@@ -98,10 +98,59 @@ const owlSlider = function () {
     });
 }
 
+const setPercentCourse = function () {
+    $('.course_list_container .course_item .progress_bar').each(function () {
+        var progress = $(this).data('progress');
+        if (progress)
+            $(this).find('.percent').css('width', progress + '%');
+    });
+    $('.course_list_container .course_item .course_item_avt').each(function () {
+        var marginTop = $(this).data('margin-top');
+        if (marginTop)
+            $(this).find('img').css('margin-top', marginTop);
+    });
+}
+
+const initCourseDetail = function () {
+    $('.course_detail_wrapper .lesson_list_container .lesson_item').click(function () {
+        $('.course_detail_wrapper .lesson_list_container .lesson_item').removeClass('active');
+        $(this).addClass('active');
+    });
+    $('.course_detail_wrapper .lesson_detail_container .slide').click(function () {
+        $(this).toggleClass('active');
+        var target = $(this).data('target');
+        if (target)
+            $('.course_detail_wrapper .lesson_detail_container').find('#' + target).slideToggle();
+    });
+    var width = $('.course_detail_wrapper .lesson_detail_container').width();
+    var iframeHeight = width * (612/1089);
+    $('.course_detail_wrapper .lesson_detail_container iframe').height(iframeHeight);
+    $('.course_detail_wrapper .lesson_detail_container .slide_lesson_detail_item .percent_bar').each(function () {
+        var percent = $(this).data('percent');
+        if (percent) {
+            var percentInt = parseInt(percent);
+            if (percentInt > 50) {
+                $(this).find('.percent').css('clip', 'rect(auto, auto, auto, auto)');
+                var deg = (percentInt - 50) * 3.6;
+                deg = 360 - deg;
+                $(this).find('.left_side').css('transform', 'rotate(' + deg + 'deg)');
+            }
+            else {
+                $(this).find('.right_side').hide();
+                var deg = percentInt * 3.6;
+                deg = 180 - deg;
+                $(this).find('.left_side').css('transform', 'rotate(' + deg + 'deg)');
+            }
+        }
+    });
+}
+
 $(window).on("load", function () {
     // common
     menuMobile();
     owlSlider();
+    setPercentCourse();
+    initCourseDetail();
     // $(".loading").removeClass("active");
     // $("a[href='#top']").click(function () {
     //     $("html, body").animate({ scrollTop: 0 }, 100);
