@@ -1,0 +1,108 @@
+.exam_detail_wrapper {
+  .course_detail_container .lesson_list_container .lesson_item {
+    border-left: 2.5px solid $color_bg_gray;
+    &.active {
+      border-left: 4px solid #ea2748;
+    }
+  }
+  .exam-item {
+    @include flexbox();
+    @include justify-content(space-between);
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    border-left: 4px solid#EA2847;
+    padding: 1.6rem 1.6rem 1.6rem 3rem;
+    margin-bottom: 1.4rem;
+
+    @include max-md {
+      @include flex-wrap(wrap);
+    }
+
+    .left,
+    .right {
+      @include max-md {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .exam-title {
+      margin-bottom: 1rem;
+      span {
+        padding: 0 2.4rem 0 2rem;
+      }
+      i {
+        color: #ffc811;
+        font-size: 1.8rem;
+        margin-left: 1.5rem;
+      }
+
+      ~ p {
+        color: #acacac;
+        font-size: 1.2rem;
+        font-weight: 400;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        letter-spacing: 1px;
+        b {
+          font-weight: 400;
+          color: $black;
+          font-size: 1.2rem;
+        }
+      }
+      + p {
+        margin-bottom: 5px;
+      }
+    }
+
+    .right {
+      @include flexbox();
+      @include justify-content(end);
+      flex-direction: column;
+      p {
+        color: #acacac;
+        font-size: 1.2rem;
+        font-weight: 400;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        letter-spacing: 1px;
+        margin-bottom: 1.3rem;
+        text-align: right;
+        @include max-md {
+          text-align: left;
+          margin-bottom: 0;
+          margin-top: 0.5rem;
+        }
+        b {
+          font-weight: 400;
+          color: $black;
+          font-size: 1.2rem;
+          display: block;
+          text-align: right;
+          color: #ea2847;
+          @include max-md {
+            display: inline;
+          }
+        }
+      }
+      button {
+        background: #ea2847;
+        border-radius: 5px;
+        color: $white;
+        border: none;
+        padding: 0.8rem 2.5rem;
+        min-width: 150px;
+        @include max-md {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    &.success {
+      .right {
+        @include justify-content(space-between);
+      }
+    }
+  }
+}

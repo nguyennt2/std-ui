@@ -10,7 +10,7 @@
       flex-grow: 1;
     }
     div {
-      border-top: 2px solid #000;
+      border-top: 2px solid $black;
     }
     h1 {
       flex-grow: 0;
@@ -100,7 +100,7 @@
               position: absolute;
               width: 5px;
               height: 5px;
-              background-color: #000;
+              background-color: $black;
               border-radius: 50%;
               top: 9px;
               left: 10px;

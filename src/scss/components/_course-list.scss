@@ -1,4 +1,7 @@
 .course_list_wrapper {
+  @include max-ml {
+    margin-bottom: 30px;
+  }
   .title {
     font-style: normal;
     font-weight: normal;
@@ -105,7 +108,7 @@
         .current_lesson_name {
           font-size: 12px;
           line-height: 14px;
-          color: #ffffff;
+          color: $white;
         }
       }
       .course_item_action {
@@ -122,6 +125,7 @@
         border-bottom-right-radius: 12px;
         display: block;
         margin-top: auto;
+        color: $black;
         &.complete {
           cursor: default;
           color: #cacaca;
@@ -130,8 +134,8 @@
           }
         }
         &::before {
-          border-top: 1.5px solid #000;
-          border-right: 1.5px solid #000;
+          border-top: 1.5px solid $black;
+          border-right: 1.5px solid $black;
           content: "";
           height: 7px;
           position: absolute;

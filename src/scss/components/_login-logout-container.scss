@@ -5,7 +5,7 @@
   align-items: stretch;
   font-size: 15px;
   line-height: 18px;
-  background: #ffffff;
+  background: $white;
   box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.22);
   border-radius: 23px;
   position: relative;
@@ -72,10 +72,10 @@
       }
 
       .forgot_password {
-        color: #000;
+        color: $black;
         display: inline-block;
         padding: 5px 15px;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid $black;
         margin-bottom: 19px;
       }
     }
@@ -134,7 +134,7 @@
     line-height: 18px;
     &.revert {
       border: 2px solid $white;
-      color: #000;
+      color: $black;
       padding: 15px 0 12px;
     }
   }
@@ -146,7 +146,7 @@
   .social_login {
     width: 91px;
     height: 48px;
-    background: #ffffff;
+    background: $white;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     display: inline-block;

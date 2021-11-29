@@ -1,0 +1,60 @@
+.sidebar {
+  width: 15%;
+  margin-right: 40px;
+
+  @include max-ml {
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  img {
+      max-width: 90px;
+      margin-bottom: 23px;
+  }
+
+  &__info {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    span:last-child {
+        font-size: 12px;
+        color: #C4C4C4;
+    }
+  }
+
+  .sub-menu-content {
+    a {
+      color: #d1d1d1;
+      width: calc(100% - 20px);
+      display: block;
+      padding: 12px 0 12px 20px;
+      font-size: 1.2rem;
+    }
+
+    .sub-menu-list {
+      position: relative;
+      &.active {
+        a {
+          background: rgba(240, 240, 240, 0.7);
+          color: #ea2748;
+        }
+        &::before {
+          content: "";
+          height: 100%;
+          width: 3px;
+          display: block;
+          background: #ea2748;
+          position: absolute;
+        }
+      }
+    }
+    i,
+    img {
+      font-size: 1rem;
+      margin-right: 18px;
+    }
+  }
+}

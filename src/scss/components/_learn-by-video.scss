@@ -9,7 +9,7 @@
       flex-grow: 1;
     }
     div {
-      border-top: 2px solid #000;
+      border-top: 2px solid $black;
     }
     h2 {
       flex-grow: 0;
@@ -42,12 +42,12 @@
         line-height: 26.4px;
       }
       a {
-        background: #ffffff;
+        background: $white;
         border-radius: 22px;
         padding: 8px 50px 6px 24px;
         font-size: 17px;
         line-height: 20px;
-        color: #000;
+        color: $black;
         margin-top: 11px;
         position: relative;
         &::after {

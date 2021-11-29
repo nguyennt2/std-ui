@@ -112,8 +112,8 @@ const setPercentCourse = function () {
 }
 
 const initCourseDetail = function () {
-    $('.course_detail_wrapper .lesson_list_container .lesson_item').click(function () {
-        $('.course_detail_wrapper .lesson_list_container .lesson_item').removeClass('active');
+    $('.tab-list .lesson_list_container .lesson_item').click(function () {
+        $('.tab-list .lesson_list_container .lesson_item').removeClass('active');
         $(this).addClass('active');
     });
     $('.course_detail_wrapper .lesson_detail_container .slide').click(function () {

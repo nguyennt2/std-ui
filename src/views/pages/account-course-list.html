@@ -1,0 +1,13 @@
+<%= _.template(require('./../base/header.html'))() %>
+<div class="content-wrapper">
+    <img style="width: 100%;" src="/assets/images/banner-account.png" alt="banner-account">
+    <div class="account">
+        <%= _.template(require('./../components/sidebar.html'))() %>
+        <div class="content-left"> 
+            <%= _.template(require('./../components/course-list.html'))() %>
+            <%= _.template(require('./../components/account-review.html'))() %>
+            <%= _.template(require('./../components/account-newsletter.html'))() %>
+        </div>
+    </div>
+</div>
+<%= _.template(require('./../base/footer-2.html'))() %>
