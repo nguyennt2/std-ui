@@ -207,6 +207,7 @@ html {
 
   &__right {
     margin-left: 48px;
+    flex: 1;
 
     @media (max-width: 1192px) {
       display: none;
@@ -225,6 +226,7 @@ html {
     overflow: hidden;
     position: relative;
     min-width: 345px;
+    flex: 1;
 
     .txt-search {
       background: $white;
@@ -268,7 +270,7 @@ html {
   }
 
   &__lang {
-    margin: 0 12px;
+    margin-left: 12px;
     @include flexbox();
     @include align-items(center);
 
@@ -302,6 +304,7 @@ html {
     border-radius: 10px;
     background-color: $color_primary;
     font-size: 1.6rem;
+    margin-left: 12px;
   }
 
   &__menu {
@@ -476,6 +479,7 @@ html {
 
   &__login-success {
     @include flex_center();
+    margin-left: 12px;
     button {
       padding: 10px 14px;
       background: $color_primary;

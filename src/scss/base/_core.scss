@@ -103,3 +103,25 @@
 .bg-main-2 {
   background: linear-gradient(0, transparent 50%, #ffca14 50%);
 }
+
+.content-2col {
+  @include flexbox();
+  @include align-items(flex-start);
+  @include justify-content(space-between);
+  gap: 4.8rem;
+  @include max-md {
+    @include flex-wrap(wrap);
+  }
+  .left-col {
+    width: 70%;
+    @include max-md {
+      width: 100%;
+    }
+  }
+  .right-col {
+    width: 30%;
+    @include max-md {
+      width: 100%;
+    }
+  }
+}
