@@ -1,0 +1,81 @@
+.test_exam_wrapper {
+  .breadcrum {
+    * {
+      font-size: 18px;
+      line-height: 22px;
+      color: #757575;
+      &::before {
+        content: "/";
+        margin: 0 5px;
+      }
+      &:first-child {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .test_exam_container {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    padding: 28px 55px;
+    .title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 29px;
+      line-height: 35px;
+    }
+    .desc {
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: lowercase;
+      margin-top: 20px;
+    }
+    .test_exam {
+      margin-top: 50px;
+      box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+      border-radius: 2px;
+      box-sizing: border-box;
+      border-left: 4px solid #ea2847;
+      padding: 20px 15px 16px 45px;
+      .exam_title {
+        font-size: 16px;
+        line-height: 19px;
+        i {
+          display: inline-block;
+          vertical-align: middle;
+          width: 6px;
+          height: 1px;
+          background-color: #ea2847;
+          margin: 0 15px;
+        }
+      }
+      .exam_bottom {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(space-between);
+        margin-top: 30px;
+        .time {
+          font-size: 12px;
+          line-height: 14px;
+          color: #acacac;
+          span {
+            font-size: 12px;
+            line-height: 14px;
+            color: $black;
+          }
+        }
+        button {
+          font-size: 16px;
+          line-height: 19px;
+          color: #ffffff;
+          padding: 7px 20px;
+          background: #EA2847;
+          border-radius: 5px;
+          border: none;
+        }
+      }
+    }
+  }
+}

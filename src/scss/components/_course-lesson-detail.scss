@@ -1,97 +1,49 @@
-.course_detail_wrapper,
-.exam_detail_wrapper {
-  .title {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 26px;
-    line-height: 31px;
-    margin-bottom: 13px;
-    span {
-      font-size: 20px;
-      line-height: 28px;
+.course_lesson_detail_wrapper {
+  .breadcrum {
+    * {
+      font-size: 18px;
+      line-height: 22px;
+      color: #757575;
+      &::before {
+        content: "/";
+        margin: 0 5px;
+      }
+      &:first-child {
+        &::before {
+          display: none;
+        }
+      }
     }
   }
-  .course_detail_container {
-    @include flexbox();
-    @include align-items(flex-start);
-    @include justify-content(flex-start);
-    gap: 12px;
-    @include max-md {
-      @include flex-wrap(wrap);
+  .course_lesson_detail_container {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    padding: 28px 55px;
+    .title {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 29px;
+      line-height: 35px;
     }
-    .lesson_list_container {
-      flex: 0 0 234.5px;
-      max-height: 646px;
-      overflow-y: auto;
-      @include max-md {
-        width: 100%;
-        flex: 1;
-      }
-      .lesson_item {
-        color: $black;
-        min-height: 55px;
-        @include flexbox();
-        @include align-items(center);
-        @include justify-content(flex-start);
-        position: relative;
-        box-sizing: border-box;
-        border-left: 2.5px solid #ffc811;
-        background-color: #fff;
-        .item_title {
-          font-size: 14px;
-          line-height: 17px;
-          flex: 0 0 23%;
-          text-align: center;
-          &::after {
-            content: "";
-            width: 1px;
-            height: 80%;
-            background-color: #c4c4c4;
-            position: absolute;
-            left: 23%;
-            top: 10%;
-          }
-          &::before {
-            content: "";
-            width: 80%;
-            height: 1px;
-            background-color: #c4c4c4;
-            position: absolute;
-            left: 10%;
-            bottom: 0px;
-          }
-        }
-        .item_detail {
-          font-size: 12px;
-          line-height: 14px;
-          padding: 5px;
-          padding-left: 11px;
-          padding-right: 25px;
-        }
-        &.active {
-          background-color: #f5f5f5;
-        }
-      }
+    .desc {
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: lowercase;
+      margin-top: 20px;
     }
-    .lesson_detail_container {
-      flex-grow: 1;
-      background: #fcfcfc;
-      box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
-      border-radius: 9px;
-      padding: 39px 60px 22px;
-      @include max-md {
-        padding: 0;
-        box-shadow: none;
-      }
+    .course_lesson_detail {
+      margin-top: 50px;
       h2 {
         font-style: normal;
         font-weight: normal;
-        font-size: 19px;
-        line-height: 23px;
-        margin-bottom: 24px;
+        font-size: 17px;
+        line-height: 20px;
+        text-transform: uppercase;
       }
       iframe {
         width: 100%;
+        margin-top: 21px;
       }
       .slide {
         padding: 11px 28px;
@@ -140,7 +92,6 @@
             border-radius: 2px;
             padding: 9px 17px 11px 14px;
             box-sizing: border-box;
-            border-left: 2px solid #EA2847;
             @include max-md {
               flex: 0 1 100%;
             }

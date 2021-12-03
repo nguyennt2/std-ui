@@ -145,12 +145,43 @@ const initCourseDetail = function () {
     });
 }
 
+const initCourseLessonDetail = function () {
+    $('.course_lesson_detail_wrapper .course_lesson_detail .slide').click(function () {
+        $(this).toggleClass('active');
+        var target = $(this).data('target');
+        if (target)
+            $('.course_lesson_detail_wrapper .course_lesson_detail').find('#' + target).slideToggle();
+    });
+    var width = $('.course_lesson_detail_wrapper .course_lesson_detail').width();
+    var iframeHeight = width * (612/1089);
+    $('.course_lesson_detail_wrapper .course_lesson_detail iframe').height(iframeHeight);
+    $('.course_lesson_detail_wrapper .course_lesson_detail .slide_lesson_detail_item .percent_bar').each(function () {
+        var percent = $(this).data('percent');
+        if (percent) {
+            var percentInt = parseInt(percent);
+            if (percentInt > 50) {
+                $(this).find('.percent').css('clip', 'rect(auto, auto, auto, auto)');
+                var deg = (percentInt - 50) * 3.6;
+                deg = 360 - deg;
+                $(this).find('.left_side').css('transform', 'rotate(' + deg + 'deg)');
+            }
+            else {
+                $(this).find('.right_side').hide();
+                var deg = percentInt * 3.6;
+                deg = 180 - deg;
+                $(this).find('.left_side').css('transform', 'rotate(' + deg + 'deg)');
+            }
+        }
+    });
+}
+
 $(window).on("load", function () {
     // common
     menuMobile();
     owlSlider();
     setPercentCourse();
     initCourseDetail();
+    initCourseLessonDetail();
     // $(".loading").removeClass("active");
     // $("a[href='#top']").click(function () {
     //     $("html, body").animate({ scrollTop: 0 }, 100);

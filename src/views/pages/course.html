@@ -1,6 +1,7 @@
 <%= _.template(require('./../base/header.html'))() %>
+<img class="banner-account" src="../../assets/images/banner-account.png" alt="">
 <div class="content-wrapper content-2col container">
-    <div class="left-col">asdsad</div>
+    <%= _.template(require('./../components/course-lesson-detail.html'))() %>
     <%= _.template(require('./../components/sidebar-blog.html'))() %>
 </div>
 <%= _.template(require('./../base/footer.html'))() %>
