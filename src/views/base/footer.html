@@ -4,20 +4,19 @@
             <div class="newsletter__title">BẠN QUAN TÂM ?</div>
             <p class="newsletter__subtitle">Vui lòng để lại thông tin bên dưới để nhận tư vấn về các chương trình, 
                 khoá học, và tham dự lớp học thử miễn phí !</p>
-            <form method="get" id="newsletterForm" action="">
-                <input name="name" type="text" placeholder="Họ và tên *" />
-                <input name="birthday" type="text" placeholder="Năm sinh" />
-                <input name="phone" type="text" placeholder="Số điện thoại liên hệ *" />
-                <input name="email" type="text" placeholder="Email *" />
-                <input name="address" type="text" placeholder="Khu vực sống *" />
-                <textarea name="info" type="text" placeholder="Thông tin quan tâm"></textarea>
+            <form id="newsletterForm" action="/#wpcf7-f267-p31-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                <p>
+                <span class="wpcf7-form-control-wrap name"><input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ và tên *"></span><br>
+                <span class="wpcf7-form-control-wrap birthday"><input type="text" name="birthday" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Năm sinh"></span><br>
+                <span class="wpcf7-form-control-wrap phone"><input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Số điện thoại liên hệ *"></span><br>
+                <span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email *"></span><br>
+                <span class="wpcf7-form-control-wrap address"><input type="text" name="address" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Khu vực sống *"></span><br>
+                <span class="wpcf7-form-control-wrap info"><textarea name="info" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Thông tin quan tâm"></textarea></span></p>
                 <div class="newsletter__bottom">
-                    <label class="newsletter__checkbox">Đăng ký nhận newsletter
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                    </label>
-                    <button class="newsletter__btn-submit" type="submit">Gửi đi</button>
-                </div>
+                    <p>    <span class="wpcf7-form-control-wrap receive"><span class="wpcf7-form-control wpcf7-checkbox"><span class="wpcf7-list-item first last"><label><span class="wpcf7-list-item-label">Đăng ký nhận newsletter</span><input type="checkbox" name="receive[]" value="Đăng ký nhận newsletter"></label></span></span></span></p>
+                    <p>  <input type="submit" value="Gửi đi" class="wpcf7-form-control wpcf7-submit newsletter__btn-submit button"><span class="ajax-loader"></span>
+                </p></div>
+            <div class="wpcf7-response-output" aria-hidden="true"></div>
             </form>
         </div>
         <div class="newsletter__right">

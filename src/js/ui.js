@@ -175,11 +175,18 @@ const initCourseLessonDetail = function () {
     });
 }
 
+const initClick = function () {
+    $('.newsletter__bottom p label input').click(function () {
+        $(this).closest('label').toggleClass('checked');
+    });
+}
+
 $(window).on("load", function () {
     // common
     menuMobile();
     owlSlider();
     setPercentCourse();
+    initClick();
     initCourseDetail();
     initCourseLessonDetail();
     // $(".loading").removeClass("active");

@@ -35,43 +35,56 @@
     }
   }
 
-  .group-form form {
+  form {
     @include flexbox();
-    @include justify-content(space-between);
+    @include justify-content(start);
+    @include align-items(space-between);
+    flex-direction: column;
     @include flex-wrap(wrap);
+
+    p:nth-child(7) {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include flex-wrap(wrap);
+      gap: 1.2rem;
+      span {
+        width: 49%;
+        &:first-child {
+          width: 100%;
+        }
+
+        @include max-ml {
+          width: 100%;
+        }
+      }
+      br {display: none;}
+    }
 
     input {
       padding: 0.8rem 1.2rem;
       background: $color_bg_gray;
       border: none;
       border-radius: 8px;
-      width: 45%;
+      width: calc(100% - 2.4rem);
+
       @include placeholder {
         color: $color_placeholder;
-      }
-
-      @include max-ml {
-        width: 100%;
-        margin-bottom: 1.6rem;
-        &:nth-child(3) {
-           margin-bottom: 0;
-          }
-      }
-
-      &:first-child {
-        margin-top: 0.8rem;
-        margin-bottom: 1.6rem;
-        width: 100%;
       }
     }
 
     span {
       font-size: 1rem;
-      width: 100%;
-      margin-top: 12px;
     }
 
-    button {
+    span.fullname input {
+      margin-top: 0.8rem;
+      width: calc(100% - 2.4rem);
+    }
+  }
+
+  .group-btn {
+    text-align: right;
+    input {
       margin-top: 1.4rem;
       background: #ea2847;
       border-radius: 7px;
@@ -79,11 +92,7 @@
       color: $white;
       border: none;
       padding: 0.6rem 3.2rem;
-    }
-
-    .group-btn {
-      text-align: right;
-      width: 100%;
+      width: auto;
     }
   }
 }
