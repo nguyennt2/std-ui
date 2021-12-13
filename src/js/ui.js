@@ -25,7 +25,10 @@ const owlSlider = function () {
         responsiveClass:true,
         nav:false,
         dots: false,
-        items:1 
+        items:1,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
     });
 
     $('.course_container').owlCarousel({
@@ -175,10 +178,24 @@ const initCourseLessonDetail = function () {
     });
 }
 
+const initLessen2 = function () {
+    $('.lessen_2_wrapper .question_container .answer_block .answer span').click(function () {
+        $(this).closest('.answer_block').find('span').removeClass('active');
+        $(this).addClass('active');
+    });
+}
+
 const initClick = function () {
     $('.newsletter__bottom p label input').click(function () {
         $(this).closest('label').toggleClass('checked');
     });
+}
+
+const initLessen4 = function () {
+    $('.lessen_4_wrapper .question_container .question_area .answer span').click(function () {
+        $(this).parent().find('span').removeClass('active');
+        $(this).addClass('active');
+    })
 }
 
 $(window).on("load", function () {
@@ -189,6 +206,8 @@ $(window).on("load", function () {
     initClick();
     initCourseDetail();
     initCourseLessonDetail();
+    initLessen2();
+    initLessen4();
     // $(".loading").removeClass("active");
     // $("a[href='#top']").click(function () {
     //     $("html, body").animate({ scrollTop: 0 }, 100);
