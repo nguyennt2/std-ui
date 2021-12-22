@@ -160,6 +160,7 @@
   }
 
   &.register {
+    display: none;
     .primary {
       h1 {
         margin-bottom: 29.85px;
@@ -192,6 +193,7 @@
     }
   }
   &.select_class {
+    display: none;
     h1 {
       color: $white;
       text-align: center;

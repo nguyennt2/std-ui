@@ -125,3 +125,53 @@
     }
   }
 }
+
+.percent_bar {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  span {
+    font-size: 13px;
+    line-height: 16px;
+    color: #ea2847;
+    background: #e8e8e8;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    line-height: 50px;
+    text-align: center;
+  }
+  .percent {
+    height: 100%;
+    width: 100%;
+    clip: rect(0, 30px, 60px, 0);
+    left: 0;
+    position: absolute;
+    top: 0;
+    .half {
+      height: 100%;
+      width: 100%;
+      border: 5px solid #ea2847;
+      border-radius: 50%;
+      clip: rect(0, 30px, 60px, 0);
+      left: 0;
+      position: absolute;
+      top: 0;
+      box-sizing: border-box;
+      &.left_side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .shadow {
+    height: 100%;
+    width: 100%;
+    border: 5px solid $black;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+}

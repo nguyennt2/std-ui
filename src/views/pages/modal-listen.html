@@ -1,0 +1,34 @@
+<button
+  type="button"
+  class="btn-modal"
+  data-modal="modal-listen"
+  style="position: relative; z-index: 10"
+>
+  Tiếp tục
+</button>
+<%= _.template(require('./../base/footer-2.html'))() %>
+<div class="modal modal-listen">
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <span class="close close-modal">&times;</span>
+      <div class="content-header">
+        <div class="left">
+          <span>LESSEN</span>
+          <span>Teil 1</span>
+          <ul class="lst-process">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="right">
+          <div class="time">Arbeitszeit: 10 Minuten</div>
+          <div class="time-process" data-time="10"><div class="inner"></div></div>
+        </div>
+      </div>
+    </div>
+    <%= _.template(require('./../components/modal/lessen-2.html'))() %>
+  </div>
+</div>
