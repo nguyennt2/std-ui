@@ -236,7 +236,7 @@ const initCourseLessonDetail = function () {
 };
 
 const initLessen2 = function () {
-  $(".lessen_2_wrapper .question_container .answer_block .answer span").click(
+  $(".lessen_wrapper .question_container .answer_block .answer span").click(
     function () {
       $(this).closest(".answer_block").find("span").removeClass("active");
       $(this).addClass("active");

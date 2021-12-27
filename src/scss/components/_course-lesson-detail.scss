@@ -188,3 +188,39 @@
     }
   }
 }
+
+.follow-register {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(space-between);
+  gap: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+  border-radius: 1.5rem;
+  padding: 2.2rem 2.6rem;
+  margin-top: 4.5rem;
+  @include max-md {
+    @include flex-wrap(wrap);
+  }
+  p {
+    @include flexbox();
+    @include align-items(center);
+    gap: 1.6rem;
+    line-height: 1.92rem;
+    &::before {
+      content: "";
+      display: inline-block;
+      background: url("/assets/images/book.png") no-repeat;
+      min-width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+  button {
+    font-size: 1.4rem;
+    padding: 1.2rem 2rem;
+    background: $color_primary;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 1.2rem;
+    border: none;
+    min-width: 16rem;
+  }
+}
