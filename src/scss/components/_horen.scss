@@ -1,0 +1,123 @@
+.horen_audio {
+  background: $white;
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.12);
+  border-radius: 0.7rem;
+  margin-top: 3.2rem;
+  position: relative;
+  padding: 2rem 2.4rem;
+  @include flexbox();
+  @include align-items(center);
+
+  &::before {
+    content: "";
+    width: 0.5rem;
+    height: 3.5rem;
+    background: $color_border;
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%);
+  }
+  #waveform {
+    flex: auto;
+    margin-right: 1.5rem;
+  }
+  span {
+    font-size: 2.6rem;
+    color: $black;
+    padding-right: 3.2rem;
+  }
+  .control {
+    margin-left: 2rem;
+    @include flexbox();
+    @include align-items(center);
+    gap: 1.9rem;
+    i {
+      font-size: 4.6rem;
+      color: $color_process;
+      cursor: pointer;
+      &:last-child {
+        color: $color_pause;
+      }
+    }
+  }
+  .time {
+    font-size: 2.6rem;
+  }
+}
+
+.modal-reading {
+  .lessen_wrapper .question_container {
+    margin-top: 0;
+    &.horen-2 {
+      .question_area {
+        border-bottom: 1px solid $color_border_4;
+        border-radius: 0;
+        &:first-child {
+          box-shadow: none;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    &.horen-4 {
+      .question_block {
+        @include align-items(center);
+      }
+      .answer-title {
+        @include flexbox();
+        @include align-items(flex-start);
+        @include justify-content(flex-end);
+        gap: 5.6rem;
+        margin-top: 2.4rem;
+      }
+      .question_area {
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
+      .answer_block {
+        @include flexbox();
+        @include align-items(flex-start);
+        @include justify-content(flex-end);
+        gap: 4.7rem;
+        label {
+          cursor: pointer;
+          span {
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            color: $color_border;
+            padding: 0.5rem 1rem;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid $color_border;
+            box-sizing: border-box;
+          }
+          input {
+            display: none;
+            &:checked {
+              ~ span {
+                color: $white;
+                background-color: $color_border;
+              }
+            }
+          }
+          &::after {
+            content: "";
+            display: inline-block;
+            width: .1rem;
+            height: .8rem;
+            background: $color_border_5;
+            margin-left: 4.7rem;
+          }
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -250,11 +250,11 @@ const initClick = function () {
   });
   $(".open-register").click(function () {
     $(".authen_form_container.login").hide();
-    $(".authen_form_container.register").css('display','flex');
+    $(".authen_form_container.register").css("display", "flex");
   });
   $(".open-login").click(function () {
     $(".authen_form_container.register").hide();
-    $(".authen_form_container.login").css('display','flex');
+    $(".authen_form_container.login").css("display", "flex");
   });
 };
 
@@ -279,6 +279,60 @@ const initModal = function () {
   });
 };
 
+const initMedia = function () {
+  const length = $("#waveform").length;
+
+  if (length > 0) {
+    const url = $("#waveform").data("source");
+    let waveSurfer = WaveSurfer.create({
+      container: '#waveform',
+      waveColor: '#e2e2e2',
+      progressColor: '#EA2847',
+      cursorColor: '#fff',
+      // fillParent: false,
+      barWidth: 5,
+      barRadius: 2.5,
+      barGap: 3,
+      height: 50,
+      responsive: true,
+      hideScrollbar: true
+    });
+    waveSurfer.load(url);
+    waveSurfer.on('audioprocess', updateTimer);
+    waveSurfer.on('seek', updateTimer);
+    waveSurfer.on('ready', function () {
+      // Make the container temporarily visible
+      $('.modal-reading').css('display','block');
+  
+      // Draw the waves
+      waveSurfer.drawBuffer();
+  
+      // Hide the container once again ! Now WaveSurfer should have been rendered normally
+      $('.modal-reading').css('display','none');
+  });
+    function secondsToTimestamp(seconds) {
+      seconds = Math.floor(seconds);
+      let h = Math.floor(seconds / 3600);
+      let m = Math.floor((seconds - (h * 3600)) / 60);
+      let s = seconds - (h * 3600) - (m * 60);
+      m = m < 10 ? '0' + m : m;
+      s = s < 10 ? '0' + s : s;
+      return m + ':' + s;
+    }
+    function updateTimer() {
+      let formattedTime = secondsToTimestamp(waveSurfer.getCurrentTime());
+      $('.horen_audio .time').text(formattedTime);
+    }
+    $('#playBtn').click(function () {
+      waveSurfer.play();
+    });
+    $('#pauseBtn').click(function () {
+      waveSurfer.pause();
+    });
+    
+  }
+};
+
 $(window).on("load", function () {
   // common
   menuMobile();
@@ -289,6 +343,7 @@ $(window).on("load", function () {
   initClick();
   initCourseDetail();
   initCourseLessonDetail();
+  initMedia();
   initLessen2();
   initLessen4();
   // $(".loading").removeClass("active");

@@ -133,7 +133,7 @@
   span {
     font-size: 13px;
     line-height: 16px;
-    color: #ea2847;
+    color: $color_border;
     background: #e8e8e8;
     border-radius: 50%;
     display: block;
@@ -155,7 +155,7 @@
     .half {
       height: 100%;
       width: 100%;
-      border: 5px solid #ea2847;
+      border: 5px solid $color_border;
       border-radius: 50%;
       clip: rect(0, 30px, 60px, 0);
       left: 0;

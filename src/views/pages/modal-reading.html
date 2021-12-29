@@ -1,0 +1,32 @@
+<%= _.template(require('./../base/header.html'))() %>
+<button
+  type="button"
+  class="btn-modal"
+  data-modal="modal-reading"
+  style="position: relative; z-index: 10"
+>
+  Tiếp tục
+</button>
+<!-- <div id="waveform" data-source="/assets/media/video.mp4"></div> -->
+<%= _.template(require('./../base/footer-2.html'))() %>
+<div class="modal modal-reading">
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <span class="close close-modal">&times;</span>
+      <div class="content-header">
+        <div class="left">
+          <span>HÖREN</span>
+          <span>Teil 1</span>
+          <ul class="lst-process">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%= _.template(require('./../components/modal/horen-4.html'))() %>
+  </div>
+</div>

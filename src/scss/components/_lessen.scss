@@ -18,9 +18,9 @@
       content: "";
       width: 5px;
       height: 35px;
-      background: #ea2847;
+      background: $color_border;
       position: absolute;
-      top: 0;
+      top: 4px;
       left: -20px;
     }
   }
@@ -39,11 +39,56 @@
       .question_title {
         font-size: 2rem;
         line-height: 2.4rem;
-        color: #ea2847;
+        color: $color_border;
         margin-bottom: 0.5rem;
         @include flexbox();
         @include align-items(flex-start);
         @include justify-content(space-between);
+        &.style-2 {
+          @include justify-content(flex-start);
+          gap: 1rem;
+          padding-top: 1.6rem;
+          margin-bottom: 1.2rem;
+          span {flex: 0 0 calc(50% - 0.5rem);}
+          .answer_block {
+            flex: 0 0 calc(50% - 0.5rem);
+            text-align: left;
+            label {
+              margin-right: 2.1rem;
+              cursor: pointer;
+              span {
+                border: 0.2rem solid $color_border_2;
+                color: $color_border_2;
+                border-radius: 0.3rem;
+                padding: 0.5rem 3rem;
+              }
+              ~ label {
+                span {
+                  margin-right: 0;
+                  border-color: $color_border;
+                  color: $color_border;
+                }
+                input {
+                  &:checked {
+                    ~ span {
+                      background-color: $color_border;
+                    }
+                  }
+                }
+              }
+
+              input {
+                display: none;
+                &:checked {
+                  ~ span {
+                    color: $white;
+                    background-color: $color_border_2;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
       .answer_title {
         color: $black;
@@ -64,7 +109,7 @@
             line-height: 2.7rem;
             color: #fff;
             padding: 0.5rem;
-            background: #ea2847;
+            background: $color_border;
             border-radius: 5px;
             min-width: 2.7rem;
             min-height: 2.7rem;
@@ -87,16 +132,16 @@
             span {
               font-size: 1.5rem;
               line-height: 1.8rem;
-              color: #ea2847;
+              color: $color_border;
               padding: 0.5rem 1rem;
               background: #fff;
               border-radius: 5px;
-              border: 1px solid #ea2847;
+              border: 1px solid $color_border;
               box-sizing: border-box;
               cursor: pointer;
               &.active {
                 color: #fff;
-                background: #ea2847;
+                background: $color_border;
               }
             }
             p {
@@ -225,7 +270,7 @@
   .answer_content {
     background: $white;
     box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.25);
-    border-radius: .7rem;
+    border-radius: 0.7rem;
     margin-top: 6rem;
     padding: 3.6rem 3rem;
   }
@@ -243,7 +288,7 @@
         margin-left: 1.6rem;
         width: 36px;
         height: 36px;
-        background: #ea2847;
+        background: $color_border;
         border-radius: 50%;
         line-height: 36px;
         font-size: 2rem;
