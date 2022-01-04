@@ -1,0 +1,176 @@
+.lst-3 {
+    @include flexbox();
+    flex-direction: column;
+    gap: 1.6rem;
+    .item {
+        @include flexbox();
+        flex-direction: column;
+        background: $white;
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        overflow: hidden;
+
+        .main {
+            @include flexbox();
+            gap: 3.6rem;
+            position: relative;
+
+            @include max-md {
+                @include flex-wrap(wrap);
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        img {
+            max-width: 19rem;
+            border-radius: 2rem;
+            @include max-md {
+                max-width: 100%;
+            }
+        }
+
+        .content {
+            @include flexbox();
+            @include align-items(space-between);
+            @include justify-content(space-between);
+            flex-direction: column;
+            padding: 2.5rem 0 2.1rem;
+            flex: 1;
+            @include max-md {
+                width: auto;
+                padding: 0 1.5rem 1.5rem 1.5rem;
+            }
+            a {
+                @include flexbox();
+                flex-direction: column;
+                @include max-md {
+                    margin-bottom: 2rem;
+                }
+                span {
+                    font-size: 2.9rem;
+                    line-height: 3.2rem;
+                    &:first-child {
+                        font-size: 1.6rem;
+                        line-height: 1.8rem;
+                    }
+                }
+            }
+        }
+        .bottom {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(space-between);
+            width: 90%;
+            @include max-md {
+                width: calc(100% - 3rem);
+                padding: 0 1.5rem;
+            }
+            p {
+                @include flexbox();
+                @include justify-content(center);
+                flex-direction: column;
+                position: relative;
+
+                i {
+                    color: $color_primary;
+                    font-size: 1rem;
+                    position: absolute;
+                    left: -1.5rem;
+                    top: -0.1rem;
+                }
+
+                span {
+                    color: #656565;
+                    font-size: 1.2rem;
+                    line-height: 1.4rem;
+                    &:last-child {
+                        color: $black;
+                    }
+                }
+            }
+
+            .time {
+                font-size: 1.2rem;
+                color: $color_gray_2;
+                @include flexbox();
+                @include align-items(center);
+                gap: 0.8rem;
+                &:before {
+                    content: "";
+                    background: url("/assets/images/clock.png") no-repeat;
+                    display: block;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+        }
+        .btn-collapse {
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: transparent;
+            border: none;
+            color: #ababab;
+            i {
+                font-size: 2.5rem;
+                -webkit-transition: -webkit-transform 0.5s ease-out;
+                -moz-transition: -moz-transform 0.5s ease-out;
+                -o-transition: -o-transform 0.5s ease-out;
+                -ms-transition: -ms-transform 0.5s ease-out;
+                transition: transform 0.5s ease-out;
+                &.open {
+                    transform: rotate(-90deg);
+                }
+            }
+            @include max-md {
+                top: inherit;
+                bottom: 8rem;
+                z-index: 300;
+            }
+        }
+    }
+    .lst-doc {
+        max-height: 0;
+        overflow: auto;
+        -moz-transition: max-height 0.5s;
+        -ms-transition: max-height 0.5s;
+        -o-transition: max-height 0.5s;
+        -webkit-transition: max-height 0.5s;
+        transition: max-height 0.5s;
+        .item {
+            padding: 0.6rem 5.2rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: -1.5rem;
+            padding-top: 2.2rem;
+            background: $white;
+            position: relative;
+            color: #b2b2b2;
+            flex-direction: row;
+            &:first-child {
+                margin-top: 0;
+                padding-top: 0.6rem;
+            }
+            &.active {
+                color: #131313;
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    background: $color_red;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 1.7rem;
+                    left: 3rem;
+                }
+            }
+        }
+        &.open {
+            max-height: 194px;
+        }
+    }
+}

@@ -256,6 +256,10 @@ const initClick = function () {
     $(".authen_form_container.register").hide();
     $(".authen_form_container.login").css("display", "flex");
   });
+  $(".btn-collapse").click(function () {
+    $(this).children('i').eq(0).toggleClass('open');
+    $(this).parent().next().toggleClass('open');
+  });
 };
 
 const initLessen4 = function () {

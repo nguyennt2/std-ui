@@ -1,0 +1,61 @@
+.lst-2 {
+    @include flexbox();
+    flex-direction: column;
+    gap: 1.6rem;
+    .item {
+        @include flexbox();
+        gap: 3.6rem;
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 2rem;
+        overflow: hidden;
+
+        @include max-md {
+            @include flex-wrap(wrap);
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        img {
+            max-width: 19rem;
+            border-radius: 2rem;
+            @include max-md {
+                max-width: 100%;
+            }
+        }
+
+        .content {
+            @include flexbox();
+            @include align-items(space-between);
+            @include justify-content(space-between);
+            flex-direction: column;
+            padding: 2.5rem 0;
+            width: 50%;
+            @include max-md {
+                width: auto;
+                padding: 0 1.5rem 1.5rem 1.5rem;
+            }
+            a {
+                font-size: 2.4rem;
+                line-height: 2.88rem;
+                @include max-md {
+                    margin-bottom: 2rem;
+                }
+            }
+            span {
+                font-size: 1.2rem;
+                color: $color_gray_2;
+                @include flexbox();
+                @include align-items(center);
+                gap: 0.8rem;
+                &:before {
+                    content: "";
+                    background: url("/assets/images/clock.png") no-repeat;
+                    display: block;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+        }
+    }
+}
