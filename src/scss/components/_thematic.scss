@@ -45,7 +45,7 @@
     background: #ffcb16;
     @include flexbox();
     flex: 1 0 auto;
-    flex-direction: column;
+    @include flex-direction(column);
     @include align-items(center);
     @include justify-content(end);
     height: calc(100% - 50px);

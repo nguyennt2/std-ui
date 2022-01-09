@@ -1,10 +1,10 @@
 .lst-3 {
     @include flexbox();
-    flex-direction: column;
+    @include flex-direction(column);
     gap: 1.6rem;
     .item {
         @include flexbox();
-        flex-direction: column;
+        @include flex-direction(column);
         background: $white;
         box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
         border-radius: 2rem;
@@ -17,7 +17,7 @@
 
             @include max-md {
                 @include flex-wrap(wrap);
-                flex-direction: column;
+                @include flex-direction(column);
                 gap: 1.5rem;
             }
         }
@@ -34,7 +34,7 @@
             @include flexbox();
             @include align-items(space-between);
             @include justify-content(space-between);
-            flex-direction: column;
+            @include flex-direction(column);
             padding: 2.5rem 0 2.1rem;
             flex: 1;
             @include max-md {
@@ -43,7 +43,7 @@
             }
             a {
                 @include flexbox();
-                flex-direction: column;
+                @include flex-direction(column);
                 @include max-md {
                     margin-bottom: 2rem;
                 }
@@ -69,7 +69,7 @@
             p {
                 @include flexbox();
                 @include justify-content(center);
-                flex-direction: column;
+                @include flex-direction(column);
                 position: relative;
 
                 i {

@@ -12,13 +12,14 @@
             display: block;
             border: 1px solid $black;
             flex: 1;
+            height: 0;
         }
     }
     .article-lst {
         margin: 1.3rem 0 1.6rem;
         @include flexbox();
         @include align-items(space-between);
-        flex-direction: column;
+        @include flex-direction(column);
         gap: 3.1rem;
         .article-item {
             @include flexbox();

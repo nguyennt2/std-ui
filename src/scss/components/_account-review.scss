@@ -39,7 +39,7 @@
     @include flexbox();
     @include justify-content(start);
     @include align-items(space-between);
-    flex-direction: column;
+    @include flex-direction(column);
     @include flex-wrap(wrap);
 
     p:nth-child(7) {

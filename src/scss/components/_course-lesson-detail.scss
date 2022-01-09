@@ -20,6 +20,9 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
     border-radius: 12px;
     padding: 28px 55px;
+    @include max-md {
+      padding: 2.8rem 2rem;
+    }
     .title {
       font-style: normal;
       font-weight: normal;

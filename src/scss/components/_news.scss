@@ -4,6 +4,9 @@
     &:before,
     &:after {
       width: calc(100% + 400px);
+      border: 1px solid $black;
+      height: 0;
+      flex: auto;
     }
 
     &:after {
@@ -38,6 +41,9 @@
     @include max-ml {
       width: calc(100vw - 140px);
       margin: 0 auto;
+    }
+    .owl-nav button.owl-prev, .owl-nav button.owl-next {
+      background: $white;
     }
   }
 

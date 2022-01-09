@@ -16,7 +16,7 @@
   &__content {
     padding: 16px 33px 32px;
     @include flexbox();
-    flex-direction: column;
+    @include flex-direction(column);
     @include align-items(left);
     @include justify-content(top);
 

@@ -5,6 +5,7 @@
   font-size: 2.8rem;
   position: relative;
   text-transform: uppercase;
+  gap: 2rem;
 
   @include max-md {
     font-size: 1.6rem;
@@ -21,7 +22,7 @@
     content: "";
     display: block;
     height: 1px;
-    width: calc(32% - 22px);
+    flex-grow: 1;
     border-top: 1px solid $color_secondary;
   }
 
