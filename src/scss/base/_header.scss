@@ -639,3 +639,40 @@ button.questions {
     margin-left: 1rem;
   }
 }
+
+.lst-social {
+  background: $white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px 0px 0px 26.5px;
+  position: fixed;
+  top: 10vw;
+  right: 0;
+  min-height: 13.4rem;
+  z-index: 10;
+  padding: 1.2rem;
+  @include flexbox();
+  @include align-items(center);
+  @include flex-direction(column);
+  @include justify-content(center);
+  gap: 1rem;
+
+  a {
+    width: 3.1rem;
+    height: 3.1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &.phone {
+      background: url("/assets/images/icon-phone-chat.png") no-repeat;
+    }
+
+    &.facebook {
+      background: url("../../assets/images/icon-fb-3.png") no-repeat;
+    }
+
+    &.zom {
+      background: url("../../assets/images/icon-z.png") no-repeat;
+    }
+  }
+}

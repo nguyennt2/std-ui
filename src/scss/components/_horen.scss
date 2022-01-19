@@ -8,6 +8,10 @@
   @include flexbox();
   @include align-items(center);
 
+  @include max-sm {
+    @include flex-wrap(wrap);
+  }
+
   &::before {
     content: "";
     width: 0.5rem;
@@ -21,6 +25,10 @@
   #waveform {
     flex: auto;
     margin-right: 1.5rem;
+    @include max-sm {
+      flex: 1;
+      min-width: calc(48% - 31px);
+    }
   }
   span {
     font-size: 2.6rem;
@@ -32,6 +40,9 @@
     @include flexbox();
     @include align-items(center);
     gap: 1.9rem;
+    @include max-sm {
+      margin-top: 1rem;
+    }
     i {
       font-size: 4.6rem;
       color: $color_process;
@@ -43,12 +54,21 @@
   }
   .time {
     font-size: 2.6rem;
+    @include max-sm {
+      flex-grow: 1;
+      margin-top: 1rem;
+      min-width: 8rem;
+    }
   }
 }
 
 .modal-reading {
   .lessen_wrapper .question_container {
     margin-top: 0;
+    @include max-md {
+      margin-top: 2rem;
+      margin-left: -3rem;
+    }
     &.horen-2 {
       .question_area {
         border-bottom: 1px solid $color_border_4;
@@ -64,6 +84,10 @@
     &.horen-4 {
       .question_block {
         @include align-items(center);
+        @include max-md {
+          @include flex-wrap(wrap);
+          gap: 2rem;
+        }
       }
       .answer-title {
         @include flexbox();
@@ -71,6 +95,10 @@
         @include justify-content(flex-end);
         gap: 5.6rem;
         margin-top: 2.4rem;
+
+        @include max-md {
+          display: none;
+        }
       }
       .question_area {
         &:nth-child(2) {
@@ -84,6 +112,11 @@
         gap: 4.7rem;
         label {
           cursor: pointer;
+          @include max-md {
+            flex: 0 1 100%;
+            @include flexbox();
+            @include align-items(center);
+          }
           span {
             font-size: 1.5rem;
             line-height: 1.8rem;

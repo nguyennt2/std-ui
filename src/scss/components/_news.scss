@@ -3,20 +3,23 @@
     @include justify-content(center);
     &:before,
     &:after {
-      width: calc(100% + 400px);
       border: 1px solid $black;
       height: 0;
-      flex: auto;
+      flex-grow: 1;
     }
 
     &:after {
       margin-right: 200px;
-      width: calc(100% - 200px);
     }
 
     span {
       font-size: 2.8rem;
       padding: 0 2.2rem;
+      @include max-ml {
+        flex-grow: 1;
+        font-size: 2.5rem;
+        padding: 0 0;
+      }
     }
 
     .btn-viewmore {
