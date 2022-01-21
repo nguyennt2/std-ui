@@ -54,6 +54,10 @@
       width: auto;
       height: auto;
       border-radius: 2rem;
+      @include max-md {
+        width: 90%;
+        max-height: 90vh;
+      }
     }
   }
   &__header {

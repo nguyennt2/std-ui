@@ -192,7 +192,7 @@
       }
     }
   }
-  &.select_class {
+  &.select_class, &.select_class_2 {
     display: none;
     h1 {
       color: $white;
@@ -227,6 +227,7 @@
           max-width: 70%;
           margin: auto;
           font-weight: 400;
+          
         }
       }
       .select_container {
@@ -311,6 +312,14 @@
       }
     }
   }
+  &.select_class_2 {
+    .primary .button_area {
+      @include justify-content(center);
+    }
+    .secondary {
+      display: none;
+    }
+  }
   .icon_close {
     position: absolute;
     top: 13px;
@@ -362,5 +371,14 @@
         width: 70px;
       }
     }
+    &.select_class {
+      height: 90vh;
+      .primary {
+        padding: 40px 20px;
+      }
+      h1.small {
+        font-size: 18px;
+      }
+    } 
   }
 }
