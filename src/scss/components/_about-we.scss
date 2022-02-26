@@ -31,6 +31,10 @@
       border-radius: 68px;
       box-sizing: border-box;
       padding: 27px 70px 29px 29px;
+      @include max-ml {
+        padding: 25px;
+        flex-wrap: wrap;
+      }
       .avt {
         position: relative;
         flex-grow: 0;
@@ -68,6 +72,9 @@
             font-size: 25px;
             line-height: 30px;
             font-weight: normal;
+            @include max-ml {
+              font-size: 18px;
+            }
           }
           .info {
             span {
@@ -88,6 +95,11 @@
         .achievement {
           padding-top: 17px;
           border-top: 1px solid #bbbbbb;
+          @include max-ml {
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #bbbbbb;
+          }
           h3 {
             font-weight: normal;
             font-size: 18px;
@@ -95,6 +107,10 @@
             margin-bottom: 2px;
             padding-left: 25px;
             position: relative;
+            @include max-ml {
+              font-size: 15px;
+              padding-left: 0;
+            }
             &::after {
               content: "";
               position: absolute;
@@ -104,6 +120,9 @@
               border-radius: 50%;
               top: 9px;
               left: 10px;
+              @include max-ml {
+                display: none;
+              }
             }
           }
         }

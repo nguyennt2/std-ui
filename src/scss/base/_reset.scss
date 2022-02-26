@@ -67,19 +67,19 @@ fieldset legend {
 ::-webkit-input-placeholder {
 	-webkit-transition: text-indent 0.5s ease, color 0.5s ease;
 	transition: text-indent 0.5s ease, color 0.5s ease;
-	color: #969696;
+	color: #000;
 }
 
 input::-moz-placeholder {
 	-webkit-transition: text-indent 0.5s ease, color 0.5s ease;
 	transition: text-indent 0.5s ease, color 0.5s ease;
-	color: #969696;
+	color: #000;
 }
 
 input::ms-input-placeholder {
 	-webkit-transition: text-indent 0.5s ease, color 0.5s ease;
 	transition: text-indent 0.5s ease, color 0.5s ease;
-	color: #969696;
+	color: #000;
 }
 
 [placeholder]:focus::-webkit-input-placeholder {
