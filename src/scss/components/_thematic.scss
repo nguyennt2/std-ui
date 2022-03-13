@@ -1,5 +1,20 @@
 .thematic {
-  margin: 0 auto 40px;
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: calc(100% + 70px);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background: url('../../assets/images/bg-section-course.png') no-repeat;
+    // background-size: cover;
+    z-index: 1;
+  }
+  &__wrapper {
+    margin: 0 auto 40px;
+  }
   &__title {
     font-size: 2.5rem;
     margin: 3.1rem 0;
@@ -35,7 +50,7 @@
     }
 
     .owl-stage-outer {
-      overflow: visible;
+      // overflow: visible;
       @include max-ml {
         overflow: hidden;
       }
