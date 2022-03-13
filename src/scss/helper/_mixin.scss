@@ -290,6 +290,20 @@
 	}
 }
 
+// query xxl
+
+@mixin max-xxl {
+	@media (max-width: #{$screen-xxl}) {
+		@content;
+	}
+}
+
+@mixin min-xxl {
+	@media (min-width: #{$screen-xxl}) {
+		@content;
+	}
+}
+
 // md to lg and md to ml
 
 @mixin md-to-lg {

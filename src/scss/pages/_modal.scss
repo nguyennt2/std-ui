@@ -51,12 +51,14 @@
       height: 90vh;
     }
     &.wrapper-login {
-      width: 50vw;
+      width: 90%;
       height: auto;
       border-radius: 2rem;
-      @include max-md {
-        width: 90%;
-        max-height: 90vh;
+      @include min-xl {
+        width: 70%;
+      }
+      @include min-xxl {
+        max-width: 895px;
       }
     }
   }

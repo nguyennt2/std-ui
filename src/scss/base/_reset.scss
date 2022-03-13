@@ -157,6 +157,7 @@ select {
 @media (min-width: $screen-ml) {
 	.container {
 		max-width: 1024px;
+		margin: 0 auto;
 	}
 }
 
