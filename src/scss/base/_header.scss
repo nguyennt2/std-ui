@@ -212,6 +212,9 @@ html {
     @include max-ml {
       display: none;
     }
+    @include max-xl {
+      margin-left: 0;
+    }
   }
 
   &__right-top {
@@ -305,6 +308,10 @@ html {
     background-color: $color_primary;
     font-size: 1.6rem;
     margin-left: 12px;
+
+    @include max-xl {
+      font-size: 1.4rem;
+    }
   }
 
   &__menu {
