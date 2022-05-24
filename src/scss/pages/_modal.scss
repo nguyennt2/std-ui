@@ -60,6 +60,10 @@
       @include min-xxl {
         max-width: 895px;
       }
+      @include max-md {
+        width: 90%;
+        height: 90vh;
+      }
     }
   }
   &__header {

@@ -30,11 +30,12 @@
       &:hover {
         transform: translateY(-15px);
       }
-      div {
+      a {
         background: #fed000;
         box-shadow: inset -10px 0px 10px -10px rgba(250, 27, 27, 0.3);
         position: relative;
         height: 234px;
+        display: block;
         overflow: hidden;
         &::after {
           content: "";

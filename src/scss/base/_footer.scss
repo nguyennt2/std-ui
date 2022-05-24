@@ -342,6 +342,7 @@
       .social__fanpage {
         &:last-child {
           span {
+            text-align: right;
             &::after {
               right: 0;
               left: inherit;
@@ -350,6 +351,22 @@
                 right: inherit;
                 left: 0;
               }
+            }
+          }
+          @include max-md {
+            span {
+              text-align: left;
+            }
+          }
+        }
+        &:first-child {
+          width: 350px;
+          .fb-page span {
+            min-width: 350px !important;
+            width: 350px !important;
+            iframe {
+              min-width: 350px !important;
+              width: 350px !important;
             }
           }
         }

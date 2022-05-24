@@ -58,6 +58,7 @@
   }
   &__item {
     background: #ffcb16;
+    display: block;
     @include flexbox();
     flex: 1 0 auto;
     @include flex-direction(column);
@@ -76,8 +77,9 @@
       position: relative;
       z-index: 1;
       width: 80% !important;
+      margin: 0 auto;
       @include max-ml {
-        width: 50% !important;
+        width: 55% !important;
       }
     }
   }

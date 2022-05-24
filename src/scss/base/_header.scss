@@ -114,6 +114,7 @@ html {
       &.has-child {
         a {
           width: auto;
+          z-index: -1;
         }
         &.open {
           i {
@@ -430,6 +431,8 @@ html {
       z-index: 2;
       width: 40px;
       height: 40px;
+      background: transparent;
+      border: none;
     }
 
     .logo-mb-2 {
@@ -681,5 +684,11 @@ button.questions {
     &.zom {
       background: url("../../assets/images/icon-z.png") no-repeat;
     }
+  }
+}
+
+@media (max-width: 479px) {
+  .lst-social {
+    top: 18vw;
   }
 }

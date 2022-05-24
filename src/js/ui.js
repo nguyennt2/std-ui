@@ -8,12 +8,13 @@ const menuMobile = function () {
     $("html, body").removeClass("open-menu");
   });
 
-  $(".menu-item.has-child i").click(function (e) {
-    if ($(this).parent().hasClass("open")) {
-      $(this).parent().toggleClass("open");
+  $(".menu-item.has-child").click(function (e) {
+    $(this).find("a").off("click");
+    if ($(this).hasClass("open")) {
+      $(this).toggleClass("open");
     } else {
       $(".menu-item.has-child.open").removeClass("open");
-      $(this).parent().addClass("open");
+      $(this).addClass("open");
     }
   });
 };
@@ -257,8 +258,8 @@ const initClick = function () {
     $(".authen_form_container.login").css("display", "flex");
   });
   $(".btn-collapse").click(function () {
-    $(this).children('i').eq(0).toggleClass('open');
-    $(this).parent().next().toggleClass('open');
+    $(this).children("i").eq(0).toggleClass("open");
+    $(this).parent().next().toggleClass("open");
   });
 };
 
@@ -289,51 +290,50 @@ const initMedia = function () {
   if (length > 0) {
     const url = $("#waveform").data("source");
     let waveSurfer = WaveSurfer.create({
-      container: '#waveform',
-      waveColor: '#e2e2e2',
-      progressColor: '#EA2847',
-      cursorColor: '#fff',
+      container: "#waveform",
+      waveColor: "#e2e2e2",
+      progressColor: "#EA2847",
+      cursorColor: "#fff",
       // fillParent: false,
       barWidth: 5,
       barRadius: 2.5,
       barGap: 3,
       height: 50,
       responsive: true,
-      hideScrollbar: true
+      hideScrollbar: true,
     });
     waveSurfer.load(url);
-    waveSurfer.on('audioprocess', updateTimer);
-    waveSurfer.on('seek', updateTimer);
-    waveSurfer.on('ready', function () {
+    waveSurfer.on("audioprocess", updateTimer);
+    waveSurfer.on("seek", updateTimer);
+    waveSurfer.on("ready", function () {
       // Make the container temporarily visible
-      $('.modal-reading').css('display','block');
-  
+      $(".modal-reading").css("display", "block");
+
       // Draw the waves
       waveSurfer.drawBuffer();
-  
+
       // Hide the container once again ! Now WaveSurfer should have been rendered normally
-      $('.modal-reading').css('display','none');
-  });
+      $(".modal-reading").css("display", "none");
+    });
     function secondsToTimestamp(seconds) {
       seconds = Math.floor(seconds);
       let h = Math.floor(seconds / 3600);
-      let m = Math.floor((seconds - (h * 3600)) / 60);
-      let s = seconds - (h * 3600) - (m * 60);
-      m = m < 10 ? '0' + m : m;
-      s = s < 10 ? '0' + s : s;
-      return m + ':' + s;
+      let m = Math.floor((seconds - h * 3600) / 60);
+      let s = seconds - h * 3600 - m * 60;
+      m = m < 10 ? "0" + m : m;
+      s = s < 10 ? "0" + s : s;
+      return m + ":" + s;
     }
     function updateTimer() {
       let formattedTime = secondsToTimestamp(waveSurfer.getCurrentTime());
-      $('.horen_audio .time').text(formattedTime);
+      $(".horen_audio .time").text(formattedTime);
     }
-    $('#playBtn').click(function () {
+    $("#playBtn").click(function () {
       waveSurfer.play();
     });
-    $('#pauseBtn').click(function () {
+    $("#pauseBtn").click(function () {
       waveSurfer.pause();
     });
-    
   }
 };
 
