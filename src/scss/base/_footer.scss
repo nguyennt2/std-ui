@@ -353,20 +353,15 @@
               }
             }
           }
-          @include max-md {
-            span {
-              text-align: left;
-            }
-          }
         }
         &:first-child {
-          width: 350px;
+          width: 500px;
           .fb-page span {
-            min-width: 350px !important;
-            width: 350px !important;
+            min-width: 500px !important;
+            width: 500px !important;
             iframe {
-              min-width: 350px !important;
-              width: 350px !important;
+              min-width: 500px !important;
+              width: 500px !important;
             }
           }
         }
