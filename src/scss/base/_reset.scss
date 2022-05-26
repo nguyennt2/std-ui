@@ -212,6 +212,8 @@ body {
 .content-wrapper {
   position: relative;
   z-index: 2;
+  background-color: #FFF;
+
   .content-home {
     position: relative;
     &::before {
@@ -225,4 +227,8 @@ body {
       height: 100%;
     }
   }
+}
+
+h3 {
+  font-size: 2em;
 }
