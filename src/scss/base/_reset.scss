@@ -232,3 +232,13 @@ body {
 h3 {
   font-size: 2em;
 }
+
+.no-overflow {
+  a {
+    text-decoration: underline;
+    color: #428bca;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
